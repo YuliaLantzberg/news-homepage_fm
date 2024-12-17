@@ -1,0 +1,127 @@
+// CSS RESET
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+	margin: 0;
+}
+
+body {
+	/* 3. Add accessible line-height */
+	line-height: 1.5;
+	/* 4. Improve text rendering */
+	-webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+	isolation: isolate;
+}
+
+//   VARIABLES
+// ##Colors
+@clr-gunmetal: #5e607a;
+@clr-darkspace-blue: #00001a;
+@clr-almost-white: #f2f2f2;
+@clr-light-vermillion: #f15d51;
+@clr-silver: #c5c6ce;
+@clr-yellow: #e9aa52;
+@clr-light-grey: #d8d8d8;
+@clr-grey: #5e607a;
+
+// TYPOGRAPHY
+
+@fs-regular: 0.938rem;
+
+@fw-regular: 400;
+@fw-bold: 700;
+@fw-extrabold: 800;
+
+// MIXINS
+
+.sp-heading-big {
+	line-height: 1;
+	letter-spacing: 0;
+}
+
+.heading-xl {
+	font-size: 3.5rem;
+	font-weight: @fw-extrabold;
+	.sp-heading-big();
+}
+.heading-l {
+	font-size: 2.5rem;
+	font-weight: @fw-bold;
+	.sp-heading-big();
+}
+
+.heading-m {
+	font-size: 2rem;
+	font-weight: @fw-bold;
+	.sp-heading-big();
+}
+.heading-sm {
+	font-size: 1.25rem;
+	font-weight: @fw-extrabold;
+	line-height: 1.2;
+}
+.heading-xs {
+	font-size: 1.125rem;
+	font-weight: @fw-extrabold;
+	line-height: 1.33;
+}
+.body-text {
+	font-size: @fs-regular;
+	font-weight: @fw-regular;
+	line-height: 1.73;
+}

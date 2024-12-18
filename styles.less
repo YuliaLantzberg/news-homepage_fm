@@ -95,7 +95,7 @@ h6 {
 }
 
 .heading-xl {
-	font-size: 3.5rem;
+	font-size: clamp(2.5rem, 7.29vw, 3.5rem);
 	font-weight: @fw-extrabold;
 	.sp-heading-big();
 }
@@ -124,4 +124,139 @@ h6 {
 	font-size: @fs-regular;
 	font-weight: @fw-regular;
 	line-height: 1.73;
+}
+
+.flex(@align, @justify, @direction) {
+	display: flex;
+	align-items: @align;
+	justify-content: @justify;
+	flex-direction: @direction;
+}
+
+// GENERAL STYLES
+.menu {
+	display: none;
+}
+
+body {
+	display: grid;
+	.body-text();
+	font-family: "Inter", serif;
+	gap: 2rem;
+	place-content: center;
+	background-color: @clr-almost-white;
+	padding: 2rem 1rem;
+
+	main {
+		display: grid;
+		gap: 4rem;
+
+		ul {
+			list-style-type: none;
+		}
+	}
+}
+
+// HEADER STYLES
+
+header {
+	.flex(center, space-between, row);
+}
+
+//  ARTICLE STYLES
+.article {
+	display: grid;
+	gap: 1rem;
+	&__header {
+		display: grid;
+		gap: 1.5rem;
+
+		h1 {
+			.heading-xl();
+			color: @clr-darkspace-blue;
+		}
+	}
+	&__summary {
+		.flex(flex-start, center, column);
+		gap: 1.5rem;
+		color: @clr-gunmetal;
+		.body-text();
+
+		.readmore-btn {
+			background-color: @clr-light-vermillion;
+			border: none;
+			color: @clr-darkspace-blue;
+			text-transform: uppercase;
+			font-size: 0.875rem;
+			line-height: 1.71;
+			font-weight: @fw-bold;
+			padding: 0.75rem 2.063rem;
+		}
+	}
+}
+
+// NEW STYLES
+.new {
+	background-color: @clr-darkspace-blue;
+	color: @clr-silver;
+	padding: 1.5rem 1.25rem;
+
+	&__title {
+		color: @clr-yellow;
+		.heading-m();
+		margin-bottom: 2.188rem;
+	}
+
+	&__list {
+		margin-left: -2.5rem;
+	}
+	&__list-item {
+		h3 {
+			.heading-sm();
+			color: @clr-almost-white;
+			margin-bottom: 0.5rem;
+		}
+		p {
+			.body-text();
+		}
+	}
+	&__break {
+		border: 1px solid #5e607a;
+		margin-top: 1.813rem;
+		margin-bottom: 1.938rem;
+	}
+}
+
+// FOOTER STYLES
+.footer {
+	&__list {
+		.flex(flex-start, flex-start, column);
+		margin-left: -2.5rem;
+		gap: 2rem;
+	}
+	&__list-item {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 1.5rem;
+		align-items: center;
+
+		img {
+			max-height: 7.938rem;
+		}
+
+		&-number {
+			color: @clr-light-vermillion;
+			.heading-m();
+			margin-bottom: 0.75rem;
+		}
+		&-name {
+			color: @clr-darkspace-blue;
+			.heading-xs();
+			margin-bottom: 0.563rem;
+		}
+		&-description {
+			color: @clr-gunmetal;
+			.body-text();
+		}
+	}
 }

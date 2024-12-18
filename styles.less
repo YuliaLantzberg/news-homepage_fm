@@ -143,12 +143,22 @@ body {
 	place-content: center;
 	background-color: @clr-almost-white;
 	padding: 2rem 1rem;
+	@media (min-width: 60rem) {
+		padding: 6.813rem 6rem;
+		max-height: 100vh;
+	}
 	main {
 		display: grid;
 		gap: 4rem;
 
 		ul {
 			list-style-type: none;
+		}
+		@media (min-width: 60rem) {
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+			gap: 1.875rem;
+			max-height: 44.438rem;
 		}
 	}
 }
@@ -172,6 +182,12 @@ header {
 	.flex(center, space-between, row);
 	position: relative;
 
+	@media (min-width: 60rem) {
+		.hamburger {
+			display: none;
+		}
+	}
+
 	.menu {
 		height: 100%;
 		position: fixed;
@@ -185,6 +201,15 @@ header {
 		.flex(center, flex-start, row);
 		display: none;
 
+		@media (min-width: 60rem) {
+			display: flex;
+			height: auto;
+			position: static;
+			&__close {
+				display: none;
+			}
+		}
+
 		&__close {
 			align-self: flex-start;
 			position: absolute;
@@ -195,6 +220,9 @@ header {
 			.flex(flex-start, space-between, column);
 			gap: 1.5rem;
 			list-style-type: none;
+			@media (min-width: 60rem) {
+				.flex(flex-start, space-between, row);
+			}
 		}
 		&__list-item {
 			a {
@@ -214,13 +242,25 @@ header {
 .article {
 	display: grid;
 	gap: 1rem;
+	@media (min-width: 60rem) {
+		grid-area: 1 / 1 / 3 / 3;
+		gap: 1.75rem;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+
 	&__header {
 		display: grid;
 		gap: 1.5rem;
-
-		h1 {
-			.heading-xl();
-			color: @clr-darkspace-blue;
+		@media (min-width: 60rem) {
+			grid-area: 1 / 1 / 2 / 3;
+		}
+	}
+	&__title {
+		.heading-xl();
+		color: @clr-darkspace-blue;
+		@media (min-width: 60rem) {
+			grid-area: 2 / 1 / 4 / 2;
 		}
 	}
 	&__summary {
@@ -228,6 +268,11 @@ header {
 		gap: 1.5rem;
 		color: @clr-gunmetal;
 		.body-text();
+		@media (min-width: 60rem) {
+			grid-area: 2 / 2 / 4 / 3;
+			justify-content: flex-start;
+			gap: 1.813rem;
+		}
 
 		.readmore-btn {
 			background-color: @clr-light-vermillion;
@@ -247,6 +292,10 @@ header {
 	background-color: @clr-darkspace-blue;
 	color: @clr-silver;
 	padding: 1.5rem 1.25rem;
+	@media (min-width: 60rem) {
+		height: min-content;
+		grid-area: 1 / 3 / 3 / 4;
+	}
 
 	&__title {
 		color: @clr-yellow;
@@ -276,19 +325,31 @@ header {
 
 // FOOTER STYLES
 .footer {
+	@media (min-width: 60rem) {
+		grid-area: 3 / 1 / 4 / 4;
+		margin-top: 4.438rem;
+	}
 	&__list {
 		.flex(flex-start, flex-start, column);
 		margin-left: -2.5rem;
 		gap: 2rem;
+		@media (min-width: 60rem) {
+			flex-direction: row;
+			gap: 1.875rem;
+		}
 	}
 	&__list-item {
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		gap: 1.5rem;
 		align-items: center;
+		@media (min-width: 60rem) {
+			align-items: flex-start;
+		}
 
 		img {
-			max-height: 7.938rem;
+			align-self: stretch;
+			height: 7.938rem;
 		}
 
 		&-number {

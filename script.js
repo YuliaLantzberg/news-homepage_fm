@@ -1,4 +1,4 @@
-const hamburgerBtn = document.querySelector(".humburger");
+const hamburgerBtn = document.querySelector(".hamburger");
 const closeBtn = document.querySelector(".menu__close");
 
 function openNav() {

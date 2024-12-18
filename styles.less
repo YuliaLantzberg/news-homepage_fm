@@ -158,7 +158,7 @@ body {
 			grid-template-columns: repeat(3, 1fr);
 			grid-template-rows: repeat(3, 1fr);
 			gap: 1.875rem;
-			max-height: 44.438rem;
+			max-height: 55rem;
 		}
 	}
 }
@@ -233,6 +233,10 @@ header {
 				text-transform: capitalize;
 				font-weight: @fw-regular;
 				cursor: pointer;
+
+				&:hover {
+					color: @clr-light-vermillion;
+				}
 			}
 		}
 	}
@@ -261,6 +265,7 @@ header {
 		color: @clr-darkspace-blue;
 		@media (min-width: 60rem) {
 			grid-area: 2 / 1 / 4 / 2;
+			align-self: flex-end;
 		}
 	}
 	&__summary {
@@ -272,6 +277,7 @@ header {
 			grid-area: 2 / 2 / 4 / 3;
 			justify-content: flex-start;
 			gap: 1.813rem;
+			align-self: flex-end;
 		}
 
 		.readmore-btn {
@@ -293,7 +299,6 @@ header {
 	color: @clr-silver;
 	padding: 1.5rem 1.25rem;
 	@media (min-width: 60rem) {
-		height: min-content;
 		grid-area: 1 / 3 / 3 / 4;
 	}
 
@@ -361,6 +366,11 @@ header {
 			color: @clr-darkspace-blue;
 			.heading-xs();
 			margin-bottom: 0.563rem;
+			cursor: pointer;
+
+			&:hover {
+				color: @clr-light-vermillion;
+			}
 		}
 		&-description {
 			color: @clr-gunmetal;
